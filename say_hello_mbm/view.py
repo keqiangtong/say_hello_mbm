@@ -11,7 +11,8 @@ from models import Message
 def index():
     form = SayHelloForm()
 
-    # db.create_all()      这一句我不知道放在那合适　　案例程序里是放在了ｃｏｍｍａｎｄ里
+    db.create_all()      #这一句我不知道放在那合适　　案例程序里是放在了ｃｏｍｍａｎｄ里
+                         #注意库是要手动建立的，这个只能建立库
     if form.validate_on_submit():
 
         name = form.name.data
