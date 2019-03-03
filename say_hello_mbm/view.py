@@ -6,6 +6,7 @@ from form import SayHelloForm
 from models import Message
 
 
+
 @app.route('/', methods=['post','get'])
 def index():
     form = SayHelloForm()

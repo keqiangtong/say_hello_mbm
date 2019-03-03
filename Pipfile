@@ -15,6 +15,7 @@ mysqldb = "*"
 python-mysqldb = "*"
 pymysql = "*"
 mysqlclient = "*"
+bootstrap-flask = "*"
 
 [requires]
 python_version = "2.7"
