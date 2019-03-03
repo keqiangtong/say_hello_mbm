@@ -10,11 +10,17 @@
         <div class="form-group required">
             {{ form.name.label }}
             {{ form.name(class='form-control') }}
+            {% for msg in form.name.errors %}
+            {{ msg }}
+            {% endfor %}
         </div>
         <br>
         <div class="form-group required">
             {{ form.message.label }}
             {{ form.message(class='form-control') }}
+            {% for msg in form.message.errors %}
+            {{ msg }}
+            {% endfor %}
         </div>
         <br>
             {{ form.submit(class='btn btn-primary') }}
@@ -28,7 +34,7 @@
     <h5>this tablet got {{ msg|length }} messages!</h5>
 
     <hr>
-    <small><a href="#">&darr;</a></small>
+    <small><a href="#bottom">&darr;</a></small>
 
     <div class="list-group center-block">
 

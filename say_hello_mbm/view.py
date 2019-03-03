@@ -24,6 +24,6 @@ def index():
         return redirect(url_for('index'))
 
     msg = Message.query.order_by(Message.timestamp.desc()).all()
-    print(msg)
+
     return render_template('index.html',form=form,msg=msg)
 
