@@ -5,28 +5,51 @@
 {%block content%}
 
 <div>
-    <form method="post">
-    {{ form.csrf_token }}
-    {{ form.name.label }}
-    {{ form.name }}
-    {{ form.message.label }}
-    {{ form.message }}
-    {{ form.submit }}
+    <form action="{{request.full_path}}" method="post">
+        {{ form.csrf_token }}
+        <div class="form-group required">
+            {{ form.name.label }}
+            {{ form.name(class='form-control') }}
+        </div>
+        <br>
+        <div class="form-group required">
+            {{ form.message.label }}
+            {{ form.message(class='form-control') }}
+        </div>
+        <br>
+            {{ form.submit(class='btn btn-primary') }}
     </form>
 </div>
 
+<br>
+<br>
 
 <div>
-    {% for msg in msg %}
-    {{ msg.name }}
-    {{ msg.body }}
-    <br>
-    {% endfor %}
+    <h5>this tablet got {{ msg|length }} messages!</h5>
+
+    <hr>
+    <small><a href="#">&darr;</a></small>
+
+    <div class="list-group center-block">
+
+        {% for msg in msg %}
+        <div class="panel panel-info">
+          <div class="panel-heading">
 
 
+             <h3 class="panel-title">#{{ loop.revindex}}   name:{{ msg.name }}</h3>
+          </div>
 
+          <div class="panel-body">
+             message:{{ msg.body }}
+              <br>
+              <small>datetime:{{ msg.timestamp.strftime('%Y/%m/%d %H:%M')}}</small>
+          </div>
+
+        </div>
+        <br>
+        {% endfor %}
+    </div>
 </div>
-
-
-
 {%endblock%}
+

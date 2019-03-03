@@ -12,27 +12,29 @@
 </head>
 <body>
     <main class="container">
-        <header class="text-center">
-            <h1 class="text-success">This is Say Hello Tablet</h1>
-            {% for msg in get_flashed_messages() %}
-                <div class="alert alert-info alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Warning!</strong>{{msg}}
-                </div>
-            {% endfor %}
 
-        </header>
+        <div class="col-lg-6 col-lg-offset-3">
+            <header class="text-center">
+                <h1 class="text-success">This is Say Hello Tablet</h1>
+                {% for msg in get_flashed_messages() %}
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Warning!</strong>{{msg}}
+                    </div>
+                {% endfor %}
 
-        {% block content %} {% endblock %}
+            </header>
 
-        <footer class="text-center">
-            {% block footer %}
-            {% endblock %}
-            <p><a href="#"><span class="glyphicon glyphicon-menu-up"></span></a></p>
+            {% block content %} {% endblock %}
 
-        </footer>
+            <footer class="text-center">
+                {% block footer %}
+                {% endblock %}
+                <p><a href="#"><span class="glyphicon glyphicon-menu-up"></span></a></p>
 
+            </footer>
 
+        </div>
 
 
 

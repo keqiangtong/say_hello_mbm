@@ -1,6 +1,6 @@
 #coding:utf-8
 
-from flask import render_template,redirect,url_for,flash,get_flashed_messages
+from flask import render_template,redirect,url_for,flash,get_flashed_messages,request
 from say_hello_mbm import app,db
 from form import SayHelloForm
 from models import Message
