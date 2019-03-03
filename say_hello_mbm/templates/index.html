@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}index{%endblock%}
+
+{%block content%}
+
+<div>
+    <form method="post">
+    {{ form.csrf_token }}
+    {{ form.name.label }}
+    {{ form.name }}
+    {{ form.message.label }}
+    {{ form.message }}
+    {{ form.submit }}
+    </form>
+</div>
+
+
+<div>
+    {% for msg in msg %}
+    {{ msg.name }}
+    {{ msg.body }}
+    <br>
+    {% endfor %}
+
+
+
+</div>
+
+
+
+{%endblock%}
